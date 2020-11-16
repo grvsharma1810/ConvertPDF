@@ -11,6 +11,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import { MainContentComponent } from './main-content/main-content.component';
 import { DraganddropDirective } from './directives/draganddrop.directive';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { DraganddropDirective } from './directives/draganddrop.directive';
     MatButtonModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

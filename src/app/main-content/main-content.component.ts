@@ -10,8 +10,6 @@ import {DomSanitizer} from "@angular/platform-browser";
 export class MainContentComponent {
 
   title = 'convertPDF';
-  fileName: string;
-  filePreview: string;
   files: any = [];
 
   constructor(private sanitizer: DomSanitizer) { }
@@ -29,7 +27,8 @@ export class MainContentComponent {
   uploadFile(event) {
     if(this.isImage(event)) {
       for (let index = 0; index < event.length; index++) {
-        const element = event[index];
+        let element = event[index];
+        element['processing'] = false;
         console.log(element);
         this.files.push(element);
       }
@@ -68,7 +67,9 @@ export class MainContentComponent {
     if (this.files.length > 0) {
       let doc = new jsPDF("p", "px", "a4", true);
       for (let i = 0; i < this.files.length; i++) {
+        this.files[i].processing = true;
         await this.readFile(this.files[i], doc);
+        this.files[i].processing = false;
         if (i != this.files.length - 1) {
           doc.addPage();
         }

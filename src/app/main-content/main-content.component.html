@@ -7,12 +7,15 @@
   <div id="background">
     Drag And Drop Here
   </div>
-  <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)" accept="image/jpeg">
+  <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)" accept="image/*">
 </div>
 <div  class="files-list" *ngFor="let file of files;let i= index">
   <p> {{ file.name }} </p>
-  <button class="delete-file" (click)="deleteAttachment(i)">
+  <button *ngIf="!file.processing" class="delete-file" (click)="deleteAttachment(i)">
     <span class="material-icons" style="font-size:xx-large;color: deeppink">delete_outline</span>
+  </button>
+  <button *ngIf="file.processing" style="background: transparent;border: none;pointer-events: none;">
+    <mat-spinner diameter="30" ></mat-spinner>
   </button>
 </div>
 <button mat-raised-button color="accent" id="downloadButton" (click)="download()">DOWNLOAD</button>
