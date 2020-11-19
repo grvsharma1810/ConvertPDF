@@ -9,9 +9,11 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-import { MainContentComponent } from './main-content/main-content.component';
+import { JpgToPdfComponent} from "./jpgtopdf/jpgtopdf.component";
 import { DraganddropDirective } from './directives/draganddrop.directive';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PdftojpgComponent } from './pdftojpg/pdftojpg.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,8 +21,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   declarations: [
     AppComponent,
     NavbarComponent,
-    MainContentComponent,
+    JpgToPdfComponent,
     DraganddropDirective,
+    PdftojpgComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

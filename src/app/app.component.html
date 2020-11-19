@@ -3,15 +3,13 @@
   <mat-sidenav [opened] = true [disableClose]="true" mode="side" class="sidenav">
     <mat-toolbar color="primary" class="app-toolbar">convert PDF</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">JPG TO PDF</a>
+      <a mat-list-item routerLink="/jpgtopdf">JPG TO PDF</a>
       <mat-divider></mat-divider>
-      <a mat-list-item href="#" matLine>PDF TO JPG</a>
+      <a mat-list-item routerLink="/pdftojpg" matLine>PDF TO JPG</a>
       <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <app-main-content></app-main-content>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<router-outlet></router-outlet>
-

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainContentComponent } from './main-content.component';
+import { JpgToPdfComponent} from "./jpgtopdf.component";
 
-describe('MainContentComponent', () => {
-  let component: MainContentComponent;
-  let fixture: ComponentFixture<MainContentComponent>;
+describe('JpgToPdfComponent', () => {
+  let component: JpgToPdfComponent;
+  let fixture: ComponentFixture<JpgToPdfComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainContentComponent ]
+      declarations: [ JpgToPdfComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainContentComponent);
+    fixture = TestBed.createComponent(JpgToPdfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

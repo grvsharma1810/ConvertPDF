@@ -3,11 +3,11 @@ import jsPDF from "jspdf";
 import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-main-content',
-  templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.css']
+  selector: 'app-jpgtopdf',
+  templateUrl: './jpgtopdf.component.html',
+  styleUrls: ['./jpgtopdf.component.css']
 })
-export class MainContentComponent {
+export class JpgToPdfComponent {
 
   title = 'convertPDF';
   files: any = [];
