@@ -1,0 +1,36 @@
+<div style="text-align: center">
+  <h1>PDF To JPG</h1>
+</div>
+<!--<input type="file" name="image" (change)="onFileChanged($event)">-->
+<!--<div class="info" *ngIf="filePreview">-->
+<!--  <img [src]="sanitize(filePreview)" width="150" height="150"/>-->
+<!--</div>-->
+<div *ngIf="!converted">
+  <div class="uploadfilecontainer" (click)="fileInput.click()" appDraganddrop (onFileDropped)="uploadFile($event)">
+    <div id="background">
+      Drag And Drop Here
+    </div>
+    <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)" accept="application/pdf">
+  </div>
+  <div  class="files-list" *ngFor="let file of files;let i= index">
+    <p> {{ file.name }} </p>
+    <button *ngIf="!file.processing" class="delete-file" (click)="deleteAttachment(i)">
+      <span class="material-icons" style="font-size:xx-large;color: deeppink">delete_outline</span>
+    </button>
+    <button *ngIf="file.processing" style="background: transparent;border: none;pointer-events: none;">
+      <mat-spinner diameter="30" ></mat-spinner>
+    </button>
+  </div>
+  <button mat-raised-button color="accent" id="downloadButton" (click)="convert()">CONVERT</button>
+</div>
+
+<!--Show Converted Files-->
+<div *ngIf="converted" style="display: flex;flex-wrap: wrap;justify-content: center">
+  <mat-card *ngFor="let file of convertedFiles;index as i" class="example-card">
+    <button mat-raised-button color="accent"><a href="{{file}}">DOWNLOAD</a></button>
+    <mat-card-content align="center">
+      <p> Page {{i+1}} </p>
+    </mat-card-content>
+  </mat-card>
+
+</div>

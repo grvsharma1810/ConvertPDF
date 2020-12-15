@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {JpgToPdfComponent} from "./jpgtopdf/jpgtopdf.component";
-import {PdftojpgComponent} from "./pdftojpg/pdftojpg.component";
+import {PdftoImageComponent} from "./pdftoimage/pdftoimage.component";
 
 
 const routes: Routes = [
   { path: 'jpgtopdf', component: JpgToPdfComponent },
-  { path: 'pdftojpg', component: PdftojpgComponent },
+  { path: 'pdftoimage', component: PdftoImageComponent },
   { path: '',   redirectTo: '/jpgtopdf', pathMatch: 'full' },
 ];
 

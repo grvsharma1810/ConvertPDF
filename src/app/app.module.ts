@@ -12,8 +12,9 @@ import {MatListModule} from "@angular/material/list";
 import { JpgToPdfComponent} from "./jpgtopdf/jpgtopdf.component";
 import { DraganddropDirective } from './directives/draganddrop.directive';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { PdftojpgComponent } from './pdftojpg/pdftojpg.component';
+import { PdftoImageComponent} from "./pdftoimage/pdftoimage.component";
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -23,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     JpgToPdfComponent,
     DraganddropDirective,
-    PdftojpgComponent,
+    PdftoImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatListModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

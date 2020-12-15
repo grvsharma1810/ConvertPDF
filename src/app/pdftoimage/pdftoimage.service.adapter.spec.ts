@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UploadService } from './upload-service.service';
+import { PdftoImageServiceAdapter} from "./pdftoimage.service.adapter";
 
 describe('UploadServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UploadService = TestBed.get(UploadService);
+    const service: PdftoImageServiceAdapter = TestBed.get(PdftoImageServiceAdapter);
     expect(service).toBeTruthy();
   });
 });
